@@ -6,9 +6,13 @@ services:
   - postgres
 
 env:
-  - TEST_DB="postgres://postgres@localhost:5432/postgres?sslmode=disable"
-  - GO111MODULE="on"
+  - DB_TEST=postgres://postgres@localhost:5432/postgres?sslmode=disable
+  - GO111MODULE=on
+
 
 script:
-  - CGO_ENABLED=0 GOOS=linux go build -mod vendor -a -installsuffix cgo -ldflags '-extldflags "-static"' -o fin 
-  - go test
+  - make test
+
+after_script:
+  - make docker-build
+  - make docker-push
