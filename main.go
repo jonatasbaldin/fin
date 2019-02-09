@@ -51,7 +51,7 @@ func main() {
 			if isCurrenciesEmpty(s.db) {
 				initializeScrape(s.db)
 			}
-			s.Run(":8000")
+			s.Run(fmt.Sprintf(":%s", os.Getenv("PORT")))
 		}
 
 		if *migrate {

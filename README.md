@@ -13,6 +13,7 @@ Getting th binary:
 ```
 $ go get github.com/jonatasbaldin/fin
 $ export DB=postgres://user:pass@host:port/dbame
+$ export PORT=5000
 $ fin -migrate
 $ fin -serve
 ```
@@ -20,7 +21,7 @@ $ fin -serve
 With Docker:    
 ```
 $ docker pull jonatsabaldin/fin
-$ docker run -e DB=postgres://user:pass@host:port/dbame fin
+$ docker run -e DB=postgres://user:pass@host:port/dbame -p 5000:5000 fin
 ```
 
 ## Contributing
@@ -29,6 +30,7 @@ Building the project and running tests. Requires Go v1.11 or later.
 $ git clone git@github.com:jonatasbaldin/fin
 $ go build
 $ export DB_TEST=postgres://user:pass@host:port/dbame
+$ export PORT=5000
 $ go test
 ```
 
