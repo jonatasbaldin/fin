@@ -8,6 +8,8 @@ services:
 script:
   - make test
 
-after_script:
-  - make docker-build
-  - make docker-push
+deploy:
+  provider: script
+  script: make docker-build && make docker-push
+  on:
+    tags: true
