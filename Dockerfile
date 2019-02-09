@@ -5,5 +5,4 @@ COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build -mod vendor -a -installsuffix cgo -ldflags '-extldflags "-static"' -o fin .
 
 ENV PATH "$PATH:/app"
-# CMD ["sh", "-c", "fin -migrate && fin -serve"]
-CMD ["fin -serve"]
+CMD ["sh", "-c", "fin -migrate && fin -serve"]
