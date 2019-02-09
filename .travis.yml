@@ -6,7 +6,12 @@ services:
   - postgres
 
 env:
-  - TEST_DB=postgres://postgres@localhost:5432/postgres?sslmode=disable
+  - TEST_DB="postgres://postgres@localhost:5432/postgres?sslmode=disable"
+  - GO111MODULE="on"
 
 before_script:
   - psql -c 'create database postgres;' -U postgres
+
+script:
+  - CGO_ENABLED=0 GOOS=linux go build -mod vendor -a -installsuffix cgo -ldflags '-extldflags "-static"' -o fin 
+  - go test
