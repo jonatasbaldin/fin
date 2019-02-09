@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  # TODO: Add Fin service, in a way that allows:
+  # - Build the image
+  # - Run -serve, -migrate, -scrape
+  # - Run `go test`
+  # - Watch file changes
+
+  # fin:
+
+  db:
+    image: postgres
+    volumes:
+      - fin:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    
+volumes:
+  fin:

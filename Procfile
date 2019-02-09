@@ -1,0 +1,1 @@
+web: fin -migrate && fin -serve
