@@ -6,11 +6,15 @@ services:
 script:
 - make test
 deploy:
-  provider: heroku
-  script: make docker-build && make docker-push
-  app: fin-production
-  api_key:
-    secure: YgaUnUfyNat6YyfFLThCekL0qBTyK9EumhOlLVl/ov0+i3kxpcOU6urnwnoaEztWTCKfoJxVwIxIpOedFuSopPjmqBiYwqdz18JrKiZ1reMmxFaBizDsaEoyoodcB+xWwthmTHf5ah5G4FnE1iLZtjFYAdCbyklTqvtqRv3jiOUhz1+8a/KBXw3v1JExgl7pUSZudfdO5Pgt5HddUBIyL9gyTBO5eU4SjSRaPwCD7o8TwnTZKmCoVoq/+/GDghgWZQI03ZHBRE6hnSfK+tIVNbPTRzL4+q96UlSUn+KQZtle1fHeKaR7fZT6vtnV67w0b1hJTUbByXTPMkvUx5oltKf9NCeKkywY6fYgpBneq555U7oBC3mJGPAQKF7ZOQBsCXJBxP0B/Kf5VhETtI/j8lehEljbqRv3+Ypby3Y/wq8yJeogUg9q/Gxkg9+vj/JN8KqBzaTP+VFiEFIppzRrxHb30N9WpQGJfRir1IUYP9rBNzkDVTL5uNJKQitrKvit53sUE3J0w13km4SPDctqmqbuMUXH3dkxwM4HUrZuzkZ+8B4s91POx4ZKKoxt6f1lg7bYcJUIdEnJaZXoq12W2KFcetaKPAB/+eQFiXWk+NDghQg909Epan4STwDJbpgO7D2PGK3lWwwlB03BsGdd9kfginuxVqUZncyLoLBBLDI=
-  on:
-    tags: true
-    all_branches: true
+  - provider: heroku
+    app: fin-production
+    api_key:
+      secure: YgaUnUfyNat6YyfFLThCekL0qBTyK9EumhOlLVl/ov0+i3kxpcOU6urnwnoaEztWTCKfoJxVwIxIpOedFuSopPjmqBiYwqdz18JrKiZ1reMmxFaBizDsaEoyoodcB+xWwthmTHf5ah5G4FnE1iLZtjFYAdCbyklTqvtqRv3jiOUhz1+8a/KBXw3v1JExgl7pUSZudfdO5Pgt5HddUBIyL9gyTBO5eU4SjSRaPwCD7o8TwnTZKmCoVoq/+/GDghgWZQI03ZHBRE6hnSfK+tIVNbPTRzL4+q96UlSUn+KQZtle1fHeKaR7fZT6vtnV67w0b1hJTUbByXTPMkvUx5oltKf9NCeKkywY6fYgpBneq555U7oBC3mJGPAQKF7ZOQBsCXJBxP0B/Kf5VhETtI/j8lehEljbqRv3+Ypby3Y/wq8yJeogUg9q/Gxkg9+vj/JN8KqBzaTP+VFiEFIppzRrxHb30N9WpQGJfRir1IUYP9rBNzkDVTL5uNJKQitrKvit53sUE3J0w13km4SPDctqmqbuMUXH3dkxwM4HUrZuzkZ+8B4s91POx4ZKKoxt6f1lg7bYcJUIdEnJaZXoq12W2KFcetaKPAB/+eQFiXWk+NDghQg909Epan4STwDJbpgO7D2PGK3lWwwlB03BsGdd9kfginuxVqUZncyLoLBBLDI=
+    on:
+      tags: true
+      all_branches: true
+  - provider: script
+    script: make docker-build && make docker-push
+    on:
+      tags: true
+      all_branches: true
