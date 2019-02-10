@@ -6,3 +6,5 @@ docker-compose.yml
 .vscode
 .env
 .dockerignore
+.travis.yml
+Makefile
