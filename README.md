@@ -18,16 +18,17 @@ $ export DB_TEST=postgres://user:pass@host:port/dbame
 $ export PORT=5000
 ```
 
-Getting the binary:
+Run it:
 ```
-$ go get github.com/jonatasbaldin/fin
-$ fin -migrate && fin -serve
+$ git clone git@github.com:jonatasbaldin/fin
+$ make build
+$ make run
 ```
 
 With Docker:    
 ```
 $ docker pull jonatsabaldin/fin
-$ docker run -e DB=postgres://user:pass@host:port/dbame -p 5000:5000 fin
+$ docker run -e DB="postgres://user:pass@host:port/dbame" -e PORT=5000 -p 5000:5000 jonatasbaldin/fin
 ```
 
 ## Contributing
