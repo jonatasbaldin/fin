@@ -4,7 +4,8 @@ go:
 services:
 - postgres
 script:
-- make coverage
+- go get github.com/mattn/goveralls
+- make test
 deploy:
   - provider: script
     script: make docker-build && make docker-push
