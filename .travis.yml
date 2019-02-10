@@ -6,6 +6,7 @@ services:
 script:
 - go get github.com/mattn/goveralls
 - make test
+- make coverage
 deploy:
   - provider: script
     script: make docker-build && make docker-push
