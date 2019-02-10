@@ -4,7 +4,7 @@ go:
 services:
 - postgres
 script:
-- make test
+- make coverage
 deploy:
   - provider: script
     script: make docker-build && make docker-push

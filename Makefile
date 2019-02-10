@@ -10,6 +10,9 @@ run:
 test:
 	go test
 
+coverage:
+	goveralls -repotoken ${COVERALLS_TOKEN}
+
 docker-build:
 	docker build -t jonatasbaldin/fin:latest -t jonatasbaldin/fin:${TRAVIS_TAG} .
 
