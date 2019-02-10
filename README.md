@@ -2,8 +2,8 @@
 Fin is an open source backend API to track personal finances, made with Go. _Very alpha_.
 
 [![Documentation at Postman](https://img.shields.io/badge/Documentation-Postman-orange.svg)](https://documenter.getpostman.com/view/423288/RztoLTaX)
-[![Build Status](https://travis-ci.org/jonatasbaldin/fin-backend.svg?branch=master)](https://travis-ci.org/jonatasbaldin/fin-backend)
-[![Coverage Status](https://coveralls.io/repos/github/jonatasbaldin/fin-backend/badge.svg?branch=master)](https://coveralls.io/github/jonatasbaldin/fin-backend?branch=master)
+[![Build Status](https://travis-ci.org/jonatasbaldin/fin.svg?branch=master)](https://travis-ci.org/jonatasbaldin/fin)
+[![Coverage Status](https://coveralls.io/repos/github/jonatasbaldin/fin/badge.svg?branch=master)](https://coveralls.io/github/jonatasbaldin/fin?branch=master)
 
 ## Considerations
 I used this project to learn Go. Expect some messy code. Maybe some bugs. Definitely bugs.
