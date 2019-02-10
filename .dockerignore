@@ -8,3 +8,4 @@ docker-compose.yml
 .dockerignore
 .travis.yml
 Makefile
+Procfile
