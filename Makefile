@@ -1,7 +1,7 @@
 .PHONY: test
 
 build:
-	go build -mod vendor -a -installsuffix cgo -ldflags '-extldflags "-static"' -o fin
+	go build -mod=vendor -a -installsuffix cgo -ldflags '-extldflags "-static"' -o fin
 
 run:
 	chmod +x fin
