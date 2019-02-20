@@ -5,7 +5,10 @@ build:
 
 run:
 	chmod +x fin
-	fin -migrate && fin -serve
+	./fin -migrate && ./fin -serve
+
+scrape:
+	./fin -scrape
 
 test:
 	go test
@@ -19,4 +22,4 @@ docker-build:
 docker-push:
 	echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
 	docker push jonatasbaldin/fin:latest
-	docker push jonatasbaldin/fin:${TRAVIS_TAG}
+	docker push jonatasbaldin/fin:${TRAVIS_TAG}ß
