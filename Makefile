@@ -5,7 +5,10 @@ build:
 
 run:
 	chmod +x fin
-	fin -migrate && fin -serve
+	./fin -migrate && ./fin -serve
+
+scrape:
+	./fin -scrape
 
 test:
 	go test

@@ -17,6 +17,16 @@ services:
       - 5432:5432
     environment:
       - POSTGRES_PASSWORD=postgres
+
+  db_test:
+    image: postgres
+    volumes:
+      - fin_test:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_PASSWORD=postgres
     
 volumes:
   fin:
+  fin_test:
