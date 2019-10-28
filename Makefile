@@ -1,7 +1,7 @@
 .PHONY: test
 
 build:
-	go build -mod vendor -a -installsuffix cgo -ldflags '-extldflags "-static"' -o fin
+	go build -mod=vendor -a -installsuffix cgo -ldflags '-extldflags "-static"' -o fin
 
 run:
 	chmod +x fin
@@ -22,4 +22,4 @@ docker-build:
 docker-push:
 	echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
 	docker push jonatasbaldin/fin:latest
-	docker push jonatasbaldin/fin:${TRAVIS_TAG}ß
+	docker push jonatasbaldin/fin:${TRAVIS_TAG}
